@@ -8,7 +8,7 @@ namespace cosmosdb_rbac_demo
         static void Main(string[] args)
         {
             // Don't do this - use AppSettings (I'm just being lazy for demo purposes)
-            var accountEndpoint = "https://dsrbuildcosmos2024.documents.azure.com:443/";
+            var accountEndpoint = "<Your account>";
 
             var managedIdentity = new DefaultAzureCredential();
             CosmosClient client = new CosmosClient(accountEndpoint, managedIdentity);
