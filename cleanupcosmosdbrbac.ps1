@@ -1,11 +1,11 @@
 # Connect-AzAccount
 
 # Set subscription
-Set-AzContext -Subscription 'dascottr_demo'
+Set-AzContext -Subscription '<Your sub>'
 
 # Create a custom role on the Account (roles are created on the Cosmos DB account)
-$resourceGroupName = "dsr-buildcosmos2024-rg"
-$accountName = "dsrbuildcosmos2024"
+$resourceGroupName = "<Your RG>"
+$accountName = "<Your Account>"
 
 $customPersonRoleName = 'Person Basic Reader'
 $customMetadataRoleName = 'Account Metadata Reader'

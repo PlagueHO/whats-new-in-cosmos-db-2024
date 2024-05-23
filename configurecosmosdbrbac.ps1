@@ -1,11 +1,11 @@
 # Connect-AzAccount
 
 # Set subscription
-Set-AzContext -Subscription 'dascottr_demo'
+Set-AzContext -Subscription '<Your sub>'
 
 # Create a custom role on the Account (roles are created on the Cosmos DB account)
-$resourceGroupName = "dsr-buildcosmos2024-rg"
-$accountName = "dsrbuildcosmos2024"
+$resourceGroupName = "<Your RG>"
+$accountName = "<Your Account>"
 
 # Database name
 $databaseName = 'humanresourcesapp'
@@ -68,14 +68,14 @@ New-AzCosmosDBSqlRoleAssignment `
     -PrincipalId $principalId
 
 # # Add a role to the people container scope
-# $peopleContainerScope = "/dbs/$databaseName/colls/people"
+$peopleContainerScope = "/dbs/$databaseName/colls/people"
 
-# New-AzCosmosDBSqlRoleAssignment `
-#     -AccountName $accountName `
-#     -ResourceGroupName $resourceGroupName `
-#     -RoleDefinitionId $customPersonRoleDefinitionId `
-#     -Scope $peopleContainerScope `
-#     -PrincipalId $principalId
+New-AzCosmosDBSqlRoleAssignment `
+    -AccountName $accountName `
+    -ResourceGroupName $resourceGroupName `
+    -RoleDefinitionId $customPersonRoleDefinitionId `
+    -Scope $peopleContainerScope `
+    -PrincipalId $principalId
 
 # Add a role to the be able to read all containers in all databases (see scope and built-in role def)!
 New-AzCosmosDBSqlRoleAssignment `
